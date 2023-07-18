@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "";
+}
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Barinak_Sistemi</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Barinak_Sistemi.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+</head>
+<body>
+   
+    <div class="container">
+        <main role="main" class="pb-3">
+             <form class="form">
+    <div class=" loginContainer ">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Username</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="buttonContainer">
+            
+            <button type="submit" class="btn btn-primary">Login</button>
+           
+			<button type="button" class="btn btn-success">Sign Up</button>
+        </div>
+       
+    </div>
+    </form>
+        </main>
+    </div>
+
+   
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+   
+</body>
+</html>
+
+
+
+

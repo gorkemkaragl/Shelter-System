@@ -1,0 +1,19 @@
+﻿.loginContainer {
+    padding: 32px;
+    background-color: #80808042;
+    border-radius: 20px
+}
+.form {
+    
+    display: flex;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+}
+.buttonContainer{
+    display:flex;
+
+}
+.buttonContainer button{
+    margin-right:25px;
+}
