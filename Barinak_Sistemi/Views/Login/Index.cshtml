@@ -19,29 +19,90 @@
 <body>
    
     <div class="container">
+        
+          <div class="baslik">
+            <h1>Barınak Sistemi</h1>
+            <p>Barınak Sistemine hoşgeldiniz! daha önce bir hesap oluşturduysanız lütfen giriş yapınız eğer hesabınız yoksa yeni bir hesap oluşturunuz.</p>
+          </div>
+  
+
         <main role="main" class="pb-3">
-             <form class="form">
-    <div class=" loginContainer ">
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Username</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="buttonContainer">
+            <div class="content">
+				<form class="form" action="/AnimalList/Index">
+					<div class=" loginContainer ">
+						<!-- kullanıcı giriş kısmı -->
+						<h1 class="text-center">Giriş Yap</h1><br />
+						<div>
+							<div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">E-Posta</label>
+								<input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">
+							</div>
+							<div class="mb-3">
+								<label for="exampleInputPassword1" class="form-label">Şifre</label>
+								<input type="password" class="form-control" id="InputPassword1">
+							</div>
+							<div class="buttonContainer">
+
+								<button type="submit" class="btn btn-dark">Login</button>
+
+
+							</div>
+						</div>
+
+
+
+
+					</div>
+				</form>
+
+				<form class="form">
+					<div class="registerContainer">
+						<!-- kullanıcı kayıt olma kısmı -->
+						<h1 class="text-center">Kayıt Ol</h1><br />
+						<div>
+							<div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">E-Posta</label>
+								<input type="email" class="form-control" id="InputEmail2" aria-describedby="emailHelp">
+
+							</div>
+							<div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label">Telefon Numarası</label>
+								<input type="number" class="form-control" id="InputPhoneNumber">
+							</div>
+							<div class="mb-3">
+								<label for="exampleInputPassword1" class="form-label">Şifre</label>
+								<input type="password" class="form-control" id="InputPassword2">
+							</div>
+							<div class="buttonContainer">
+
+
+
+								<button type="button" class="btn btn-dark">Sign Up</button>
+							</div>
+						</div>
+					</div>
+				</form>
+            </div>
             
-            <button type="submit" class="btn btn-primary">Login</button>
-           
-			<button type="button" class="btn btn-success">Sign Up</button>
-        </div>
-       
-    </div>
-    </form>
+            
+            
         </main>
     </div>
+    <!-- Remove the container if you want to extend the Footer to full width. -->
+    
 
+        <footer class="text-center text-white footer">
+           
+            <!-- Grid container -->
+            <!-- Copyright -->
+            <div class="text-center text-white p-3">
+                © @DateTime.Now.Year Barınak Sistemi  - Tüm Hakları Saklıdır
+               
+            </div>
+            <!-- Copyright -->
+        </footer>
+
+    
    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

@@ -16,3 +16,19 @@ html {
 body {
   margin-bottom: 60px;
 }
+.footer {
+    background-color: #b0a77dd4;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    min-height: 50px; /* deðiþebilir */
+    width: 100%;
+    overflow: hidden;
+    color: white;
+    line-height:0 !important;
+}
+
+.navButton:hover{
+    border:1px solid black;
+    border-radius:5px;
+}
