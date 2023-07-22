@@ -1,0 +1,57 @@
+﻿
+<link rel="stylesheet" href="~/css/sidebar.css"  />
+
+
+<!-- STATIC LAYOUT ENDS -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#">
+                    Bootstrap Sol Menu
+                </a>
+            </li>
+            <li>
+                <a href="#">Link #1</a>
+            </li>
+            <li>
+                <a href="#">Link #2</a>
+            </li>
+            <li>
+                <a href="#">Link #3</a>
+            </li>
+            <li>
+                <a href="#">Link #4</a>
+            </li>
+            <li>
+                <a href="#">Link #5</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Simple Sidebar</h1>
+                    <p>Tüm sayfa içeriklerinin <code>#page-content-wrapper</code> içerisinde olmasına dikkat ediniz.</p>
+                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menü Aç/Kapa</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+

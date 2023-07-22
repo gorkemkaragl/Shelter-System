@@ -32,3 +32,7 @@ body {
     border:1px solid black;
     border-radius:5px;
 }
+.navAnimals{
+    display:flex;
+    width:70px;
+}
