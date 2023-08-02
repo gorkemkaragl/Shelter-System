@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "";
 }
-
+@model Barinak_Sistemi.Models.Users
 
   
 
@@ -28,18 +28,20 @@
 
         <main role="main" class="pb-3">
             <div class="content">
-				<form class="form" action="/AnimalList/Index">
+				<form asp-controller="Login"  class="form" asp-action="Index">
 					<div class=" loginContainer ">
 						<!-- kullanıcı giriş kısmı -->
 						<h1 class="text-center">Giriş Yap</h1><br />
 						<div>
 							<div class="mb-3">
-								<label for="exampleInputEmail1" class="form-label">E-Posta</label>
-								<input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">
+								<label asp-for="email" class="form-label">E-Posta</label>
+								<input asp-for="email" name="email" type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">
+								<span asp-validation-for="email"></span>
 							</div>
 							<div class="mb-3">
-								<label for="exampleInputPassword1" class="form-label">Şifre</label>
-								<input type="password" class="form-control" id="InputPassword1">
+								<label asp-for="password" class="form-label">Şifre</label>
+								<input asp-for="password" type="password" class="form-control" id="InputPassword1">
+								<span asp-validation-for="password"></span>
 							</div>
 							<div class="buttonContainer">
 
@@ -55,29 +57,31 @@
 					</div>
 				</form>
 
-				<form class="form">
+				<form asp-controller="Login" class="form" asp-action="Index">
 					<div class="registerContainer">
 						<!-- kullanıcı kayıt olma kısmı -->
 						<h1 class="text-center">Kayıt Ol</h1><br />
 						<div>
 							<div class="mb-3">
-								<label for="exampleInputEmail1" class="form-label">E-Posta</label>
-								<input type="email" class="form-control" id="InputEmail2" aria-describedby="emailHelp">
-
+								<label asp-for="email" class="form-label">E-Posta</label>
+								<input asp-for="email" name="email" type="email" class="form-control" id="InputEmail2" aria-describedby="emailHelp">
+								<span asp-validation-for="email"></span>
 							</div>
 							<div class="mb-3">
-								<label for="exampleInputEmail1" class="form-label">Telefon Numarası</label>
-								<input type="number" class="form-control" id="InputPhoneNumber">
+								<label asp-for="phoneNumber" class="form-label">Telefon Numarası</label>
+								<input asp-for="phoneNumber" name="phoneNumber" type="number" class="form-control" id="InputPhoneNumber">
+								<span asp-validation-for="phoneNumber"></span>
 							</div>
 							<div class="mb-3">
-								<label for="exampleInputPassword1" class="form-label">Şifre</label>
-								<input type="password" class="form-control" id="InputPassword2">
+								<label asp-for="password" class="form-label">Şifre</label>
+								<input asp-for="password" name="password" type="password" class="form-control" id="InputPassword2">
+								<span asp-validation-for="password"></span>
 							</div>
 							<div class="buttonContainer">
 
 
 
-								<button type="button" class="btn btn-dark">Sign Up</button>
+								<button type="submit" class="btn btn-dark">Sign Up</button>
 							</div>
 						</div>
 					</div>
@@ -107,7 +111,9 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-   
+	<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+	<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
 </body>
 </html>
 

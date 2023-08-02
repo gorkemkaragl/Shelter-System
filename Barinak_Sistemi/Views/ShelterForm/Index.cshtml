@@ -1,58 +1,74 @@
-﻿<form class="mt-3">
+﻿@model Barinak_Sistemi.Models.ShelterUsers
+<form class="mt-3">
   <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="inputName">Adı</label>
-          <input type="text" class="form-control" id="inputName" placeholder="Adı">
+          <label asp-for="name">Adı</label>
+          <input asp-for="name" name="name" type="text" class="form-control" id="inputName" placeholder="Adı">
+          <span asp-validation-for="name"></span>
         </div>
         <div class="form-group col-md-6">
-          <label for="inputName">Soyadı</label>
-          <input type="text" class="form-control" id="inputName" placeholder="Soyadı">
+            <br />
+          <label asp-for="surName">Soyadı</label>
+          <input asp-for="surName" name="surName" class="form-control" id="inputName" placeholder="Soyadı">
+          <span asp-validation-for="surName"></span>
         </div>
         <div class="form-group col-md-6">
-          <label for="inputEmail4">Email</label>
-          <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            <br />
+          <label asp-for="email">Email</label>
+          <input asp-for="email" name="email" type="email" class="form-control" id="inputEmail4" placeholder="Email">
+          <span asp-validation-for="email"></span>
         </div>
         <div class="form-group col-md-6">
-          <label for="inputPhoneNumber">Telefon Numarası</label>
-          <input type="number" class="form-control" id="inputPhoneNumber" placeholder="+90">
+            <br />
+          <label asp-for="phoneNumber">Telefon Numarası</label>
+          <input asp-for="phoneNumber" name="phoneNumber" type="number" class="form-control" id="inputPhoneNumber" placeholder="+90">
+          <span asp-validation-for="phoneNumber"></span>
         </div>
   </div>
   <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        <br />
+    <label asp-for="adress">Address</label>
+    <input asp-for="adress" name="adress" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        <span asp-validation-for="adress"></span>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity">
+            <br />
+      <label asp-for="city">City</label>
+      <input asp-for="city" name="city" type="text" class="form-control" id="inputCity">
+      <span asp-validation-for="city"></span>
+
     </div>
     <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputMoney">Aylık Gelir</label>
-      <input type="number" class="form-control" id="inputMoney">
-    </div>
+        <div class="form-group col-md-6">
+                    <br />
+				    <label asp-for="salary">Aylık Gelir</label>
+				    <input asp-for="salary" name="salary" type="number" class="form-control" id="inputMoney">
+				    <span asp-validation-for="salary"></span>
+        </div>
     
-    <div class="form-group col-md-3">
-    <label for="inputGender">Cinsiyet</label>
-    <select class="form-control" id="inputGender">
-      <option>Erkek</option>
-      <option>Kadın</option>
-      <option>Belirtmek İstemiyorum</option>
-    </select>
-  </div>
-  </div>
-  <div class="form-group">
-    <label for="inputTextArea">Sahiplenme Nedeni</label>
-    <textarea class="form-control" id="inputTextArea" rows="3"></textarea>
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Sahiplenme Sözleşmesini Onaylıyorum
-      </label>
+        <div class="form-group col-md-3">
+            <br />
+	    <label asp-for="gender">Cinsiyet</label>
+        <select asp-for="gender" name="gender" class="form-control" id="inputGender">
+	      <option>Belirtmek İstemiyorum</option>
+          <option>Erkek</option>
+          <option>Kadın</option>
+        </select>
+    
+        </div>
     </div>
-  </div>
-  
+  <div class="form-group">
+            <br />
+    <label asp-for="reason">Sahiplenme Nedeni</label>
+    <textarea asp-for="reason" name="reason" class="form-control" id="inputTextArea" rows="3"></textarea>
+</div>
+<br />
   <button type="submit" class="btn btn-success">Gönder</button>
 </form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
