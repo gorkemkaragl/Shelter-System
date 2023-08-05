@@ -1,71 +1,88 @@
 ﻿@model Barinak_Sistemi.Models.ShelterUsers
-<form class="mt-3">
-  <div class="form-row">
-        <div class="form-group col-md-6">
-          <label asp-for="name">Adı</label>
-          <input asp-for="name" name="name" type="text" class="form-control" id="inputName" placeholder="Adı">
-          <span asp-validation-for="name"></span>
-        </div>
-        <div class="form-group col-md-6">
-            <br />
-          <label asp-for="surName">Soyadı</label>
-          <input asp-for="surName" name="surName" class="form-control" id="inputName" placeholder="Soyadı">
-          <span asp-validation-for="surName"></span>
-        </div>
-        <div class="form-group col-md-6">
-            <br />
-          <label asp-for="email">Email</label>
-          <input asp-for="email" name="email" type="email" class="form-control" id="inputEmail4" placeholder="Email">
-          <span asp-validation-for="email"></span>
-        </div>
-        <div class="form-group col-md-6">
-            <br />
-          <label asp-for="phoneNumber">Telefon Numarası</label>
-          <input asp-for="phoneNumber" name="phoneNumber" type="number" class="form-control" id="inputPhoneNumber" placeholder="+90">
-          <span asp-validation-for="phoneNumber"></span>
-        </div>
-  </div>
-  <div class="form-group">
-        <br />
-    <label asp-for="adress">Address</label>
-    <input asp-for="adress" name="adress" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        <span asp-validation-for="adress"></span>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-            <br />
-      <label asp-for="city">City</label>
-      <input asp-for="city" name="city" type="text" class="form-control" id="inputCity">
-      <span asp-validation-for="city"></span>
 
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-                    <br />
-				    <label asp-for="salary">Aylık Gelir</label>
-				    <input asp-for="salary" name="salary" type="number" class="form-control" id="inputMoney">
-				    <span asp-validation-for="salary"></span>
+<link rel="stylesheet" href="~/css/shelterForm.css" asp-append-version="true" />
+<h1 class="mt-5 text-center">Hayvan Sahiplenme Formu</h1>
+<form class="mt-3">
+    <fieldset>
+        <legend>Kişisel Bilgiler</legend>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="inputName">Adı *</label>
+                    <input type="text" class="form-control" id="inputName" placeholder="Adı" required>
+                    <span class="text-danger" asp-validation-for="name"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="inputSurName">Soyadı *</label>
+                    <input type="text" class="form-control" id="inputSurName" placeholder="Soyadı" required>
+                    <span class="text-danger" asp-validation-for="surName"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="inputEmail">Email *</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+                    <span class="text-danger" asp-validation-for="email"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="inputPhoneNumber">Telefon Numarası *</label>
+                    <input type="tel" class="form-control" id="inputPhoneNumber" placeholder="+90" required>
+                    <span class="text-danger" asp-validation-for="phoneNumber"></span>
+                </div>
+            </div>
         </div>
-    
-        <div class="form-group col-md-3">
-            <br />
-	    <label asp-for="gender">Cinsiyet</label>
-        <select asp-for="gender" name="gender" class="form-control" id="inputGender">
-	      <option>Belirtmek İstemiyorum</option>
-          <option>Erkek</option>
-          <option>Kadın</option>
-        </select>
-    
+    </fieldset>
+
+    <fieldset>
+        <legend>Adres Bilgilerin</legend>
+        <div class="form-group">
+            <label for="inputAddress">Address *</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
+            <span class="text-danger" asp-validation-for="address"></span>
         </div>
-    </div>
-  <div class="form-group">
-            <br />
-    <label asp-for="reason">Sahiplenme Nedeni</label>
-    <textarea asp-for="reason" name="reason" class="form-control" id="inputTextArea" rows="3"></textarea>
-</div>
-<br />
-  <button type="submit" class="btn btn-success">Gönder</button>
+        <div class="form-row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="inputCity">City *</label>
+                    <input type="text" class="form-control" id="inputCity" required>
+                    <span class="text-danger" asp-validation-for="city"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="inputSalary">Aylık Gelir</label>
+                    <input type="number" class="form-control" id="inputSalary">
+                    <span class="text-danger" asp-validation-for="salary"></span>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Ek Bilgiler</legend>
+        <div class="form-group">
+            <label for="inputGender">Cinsiyet</label>
+            <select class="form-control" id="inputGender">
+                <option>Belirtmek İstemiyorum</option>
+                <option>Erkek</option>
+                <option>Kadın</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="inputReason">Sahiplenme Nedeni</label>
+            <textarea class="form-control" id="inputReason" rows="3"></textarea>
+        </div>
+    </fieldset>
+
+    <button type="submit" class="btn btn-success">Gönder</button>
 </form>
+
+
+
 
 @section Scripts {
     @{

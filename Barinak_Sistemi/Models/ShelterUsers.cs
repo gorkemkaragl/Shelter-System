@@ -12,7 +12,7 @@ namespace Barinak_Sistemi.Models
 		[Required(ErrorMessage = "boş bırakılamaz")]
 		public int phoneNumber { get; set; }
 		[Required(ErrorMessage = "boş bırakılamaz")]
-		public string adress { get; set; }
+		public string address { get; set; }
 		[Required(ErrorMessage = "boş bırakılamaz")]
 		public string city { get; set; }
 		[Required(ErrorMessage = "boş bırakılamaz")]

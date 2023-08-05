@@ -51,9 +51,6 @@
 							</div>
 						</div>
 
-
-
-
 					</div>
 				</form>
 
@@ -62,6 +59,16 @@
 						<!-- kullanıcı kayıt olma kısmı -->
 						<h1 class="text-center">Kayıt Ol</h1><br />
 						<div>
+							<div class="mb-3">
+								<label asp-for="name" class="form-label">Adı</label>
+								<input asp-for="name" name="name" type="text" class="form-control"  >
+								<span asp-validation-for="name"></span>
+							</div>
+							<div class="mb-3">
+								<label asp-for="lastName" class="form-label">Soyadı</label>
+								<input asp-for="lastName" name="lastName" type="lastName" class="form-control" id="InputEmail2" aria-describedby="emailHelp">
+								<span asp-validation-for="lastName"></span>
+							</div>
 							<div class="mb-3">
 								<label asp-for="email" class="form-label">E-Posta</label>
 								<input asp-for="email" name="email" type="email" class="form-control" id="InputEmail2" aria-describedby="emailHelp">

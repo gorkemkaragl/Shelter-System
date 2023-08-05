@@ -1,0 +1,64 @@
+﻿/* Additional CSS styles for form */
+form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+    .input-group input,
+    .input-group select,
+    .input-group textarea {
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        padding: 10px;
+        width: 100%;
+        transition: border-color 0.2s ease-in-out;
+    }
+
+        .input-group input:focus,
+        .input-group select:focus,
+        .input-group textarea:focus {
+            outline: none;
+            border-color: #80bdff;
+        }
+
+.text-danger {
+    color: #dc3545;
+    font-size: 14px;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+    .btn-success:hover {
+        background-color: #218838;
+    }

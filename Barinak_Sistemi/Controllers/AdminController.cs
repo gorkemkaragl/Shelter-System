@@ -8,5 +8,13 @@ namespace Barinak_Sistemi.Controllers
 		{
 			return View();
 		}
-	}
+		public IActionResult AnimalShelter()
+		{
+			return View();
+		}
+        public IActionResult DropAnimal()
+        {
+            return View();
+        }
+    }
 }

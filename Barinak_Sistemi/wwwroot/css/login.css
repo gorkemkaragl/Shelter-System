@@ -1,5 +1,5 @@
 ﻿body {
-    background-image: url("/image/pexels-polina-tankilevitch-5540065.jpg");
+    background-image: url("/image/pexels-robert-bogdan-663573.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -34,20 +34,21 @@
 
 .baslik{
     
-    color:white;
+    color:black;
     text-align:center;
     padding-top:20px;
+    margin-bottom:20px;
 }
 
 .footer {
-    background-color: #b0a77dd4;
+    background-color: #b0a77dc2;
     position: absolute;
     left: 0;
     bottom: 0;
     min-height: 50px; /* değişebilir */
     width: 100%;
     overflow: hidden;
-    color:white;
+    color: white;
 }
 .content {
     display: flex;

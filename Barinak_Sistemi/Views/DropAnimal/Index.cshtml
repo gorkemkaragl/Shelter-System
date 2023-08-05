@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hayvan Bırakma Formu</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      
+        form {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            border-radius: 20px;
+            background-color: #b0a77dd4;
+        }
+
+        input[type="text"], input[type="number"], select, textarea, input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+	<form id="AnimalForm">
+		
+        <h2 class="text-center mt-5">Hayvan Bırakma Formu</h2>
+        <div class="form-group">
+            <label for="Name">Hayvanın Türü:</label>
+            <input type="text" id="Name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="Type">Hayvanın Adı:</label>
+            <input type="text" id="Name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="Age">Hayvanın Yaşı:</label>
+            <input type="number" id="Age" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Gender">Hayvanın Cinsiyeti:</label>
+            <select id="Gender" class="form-control" required>
+                <option value="Erkek">Erkek</option>
+                <option value="Dişi">Dişi</option>
+                <option value="Belirsiz">Belirsiz</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Description">Hayvanın Açıklaması:</label>
+            <textarea id="Description" class="form-control" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-dark">Hayvanı Bırak</button>
+    </form>
+    
+</body>
+</html>

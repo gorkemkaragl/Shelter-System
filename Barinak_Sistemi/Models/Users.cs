@@ -3,6 +3,11 @@ namespace Barinak_Sistemi.Models
 {
 	public class Users
 	{
+		[Required(ErrorMessage = "boş bırakılamaz")]
+		public string name { get; set; }
+		[Required(ErrorMessage = "boş bırakılamaz")]
+		public string lastName { get; set; }
+
 		[Required(ErrorMessage ="boş bırakılamaz")]
 		public string email { get; set; }
         [Required(ErrorMessage = "boş bırakılamaz")]
