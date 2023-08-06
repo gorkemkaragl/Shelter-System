@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "";
 }
-@model Barinak_Sistemi.Models.Users
+@model Barinak_Sistemi.Models.User
 
   
 
@@ -34,9 +34,9 @@
 						<h1 class="text-center">Giriş Yap</h1><br />
 						<div>
 							<div class="mb-3">
-								<label asp-for="email" class="form-label">E-Posta</label>
-								<input asp-for="email" name="email" type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">
-								<span asp-validation-for="email"></span>
+								<label asp-for="userEmail" class="form-label">E-Posta</label>
+								<input asp-for="userEmail" name="email" type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">
+								<span asp-validation-for="userEmail"></span>
 							</div>
 							<div class="mb-3">
 								<label asp-for="password" class="form-label">Şifre</label>
@@ -60,24 +60,24 @@
 						<h1 class="text-center">Kayıt Ol</h1><br />
 						<div>
 							<div class="mb-3">
-								<label asp-for="name" class="form-label">Adı</label>
-								<input asp-for="name" name="name" type="text" class="form-control"  >
-								<span asp-validation-for="name"></span>
+								<label asp-for="userName" class="form-label">Adı</label>
+								<input asp-for="userName" name="name" type="text" class="form-control"  >
+								<span asp-validation-for="userName"></span>
 							</div>
 							<div class="mb-3">
-								<label asp-for="lastName" class="form-label">Soyadı</label>
-								<input asp-for="lastName" name="lastName" type="lastName" class="form-control" id="InputEmail2" aria-describedby="emailHelp">
-								<span asp-validation-for="lastName"></span>
+								<label asp-for="userLastName" class="form-label">Soyadı</label>
+								<input asp-for="userLastName" name="lastName" type="lastName" class="form-control" id="InputEmail2" aria-describedby="emailHelp">
+								<span asp-validation-for="userLastName"></span>
 							</div>
 							<div class="mb-3">
-								<label asp-for="email" class="form-label">E-Posta</label>
-								<input asp-for="email" name="email" type="email" class="form-control" id="InputEmail2" aria-describedby="emailHelp">
-								<span asp-validation-for="email"></span>
+								<label asp-for="userEmail" class="form-label">E-Posta</label>
+								<input asp-for="userEmail" name="email" type="email" class="form-control" id="InputEmail2" aria-describedby="emailHelp">
+								<span asp-validation-for="userEmail"></span>
 							</div>
 							<div class="mb-3">
-								<label asp-for="phoneNumber" class="form-label">Telefon Numarası</label>
-								<input asp-for="phoneNumber" name="phoneNumber" type="number" class="form-control" id="InputPhoneNumber">
-								<span asp-validation-for="phoneNumber"></span>
+								<label asp-for="userPhoneNumber" class="form-label">Telefon Numarası</label>
+								<input asp-for="userPhoneNumber" name="phoneNumber" type="number" class="form-control" id="InputPhoneNumber">
+								<span asp-validation-for="userPhoneNumber"></span>
 							</div>
 							<div class="mb-3">
 								<label asp-for="password" class="form-label">Şifre</label>

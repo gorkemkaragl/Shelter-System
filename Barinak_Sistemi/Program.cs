@@ -1,6 +1,14 @@
+using Barinak_Sistemi.Models;
+using Microsoft.EntityFrameworkCore;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<dbContext>(
+    o => o.UseNpgsql(builder.Configuration.GetConnectionString("dbContext")
+    ));
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
