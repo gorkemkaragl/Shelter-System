@@ -1,0 +1,51 @@
+﻿@model Barinak_Sistemi.Models.User
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Sil</h1>
+
+<h3>Kullanıcıyı silmek istediğinize emin misiniz ?</h3>
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.userName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.userName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.userLastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.userLastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.userPhoneNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.userPhoneNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.userEmail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.userEmail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.password)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="userId" />
+        <input asp-controller="admin" asp-action="Delete" type="submit" value="Sil" class="btn btn-danger" /> |
+        <a class="btn btn-dark" asp-action="Users">Listeye Geri Dön</a>
+    </form>
+</div>

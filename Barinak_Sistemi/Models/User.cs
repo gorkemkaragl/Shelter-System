@@ -3,6 +3,7 @@ namespace Barinak_Sistemi.Models
 {
 	public class User
 	{
+        [Key]
         public int userId { get; set; }
         [Required(ErrorMessage ="Boş bırakmayınız")]
         public string userName { get; set; }
@@ -13,7 +14,7 @@ namespace Barinak_Sistemi.Models
         [Required(ErrorMessage = "Boş bırakmayınız")]
         public string userEmail { get; set; }
 
-       [Required(ErrorMessage = "Boş bırakmayınız")]
+        [Required(ErrorMessage = "Boş bırakmayınız")]
         public string password { get; set; }
 
 

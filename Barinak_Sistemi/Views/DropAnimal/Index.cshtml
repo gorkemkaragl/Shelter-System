@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model Barinak_Sistemi.Models.DropAnimal
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,25 +31,25 @@
 </head>
 <body>
 
-	<form id="AnimalForm">
+	<form asp-action="DropAnimal" method="post" id="AnimalForm">
 		
         <h2 class="text-center mt-5">Hayvan Bırakma Formu</h2>
         <div class="form-group">
-            <label for="Name">Hayvanın Türü:</label>
-            <input type="text" id="Name" class="form-control" required>
+            <label asp-for="DropAType">Hayvanın Türü:</label>
+            <input asp-for="DropAType" name="DropAType" type="text" id="DropAType" class="form-control" required>
         </div>
         <div class="form-group">
-            <label for="Type">Hayvanın Adı:</label>
-            <input type="text" id="Name" class="form-control" required>
+            <label asp-for="DropAName">Hayvanın Adı:</label>
+            <input asp-for="DropAName" type="text" id="DropAName" name="DropAName" class="form-control" required>
         </div>
         <div class="form-group">
-            <label for="Age">Hayvanın Yaşı:</label>
-            <input type="number" id="Age" class="form-control" required>
+            <label asp-for="DropAAge">Hayvanın Yaşı:</label>
+            <input asp-for="DropAAge" name="DropAAge" type="number" id="Age" class="form-control" required>
         </div>
 
         <div class="form-group">
-            <label for="Gender">Hayvanın Cinsiyeti:</label>
-            <select id="Gender" class="form-control" required>
+            <label asp-for="DropAGender">Hayvanın Cinsiyeti:</label>
+            <select asp-for="DropAGender" id="DropAGender" name="DropAGender" class="form-control" required>
                 <option value="Erkek">Erkek</option>
                 <option value="Dişi">Dişi</option>
                 <option value="Belirsiz">Belirsiz</option>
@@ -55,12 +57,19 @@
         </div>
 
         <div class="form-group">
-            <label for="Description">Hayvanın Açıklaması:</label>
-            <textarea id="Description" class="form-control" rows="4" required></textarea>
+            <label asp-for="DropADescription">Hayvanın Açıklaması:</label>
+            <textarea asp-for="DropADescription" id="DropADescription" name="DropADescription" class="form-control" rows="4" required></textarea>
         </div>
 
         <button type="submit" class="btn btn-dark">Hayvanı Bırak</button>
+		@if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+		{
+			<div class="alert alert-success mt-2 " role="alert">
+				@ViewBag.SuccessMessage
+			</div>
+
+		}
     </form>
-    
+   
 </body>
 </html>

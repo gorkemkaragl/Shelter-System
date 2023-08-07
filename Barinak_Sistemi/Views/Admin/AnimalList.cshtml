@@ -1,7 +1,8 @@
 ﻿@{
     Layout = "AdminLayout";
 }
-@model IEnumerable<Barinak_Sistemi.Models.User>
+
+@model IEnumerable<Barinak_Sistemi.Models.Animal>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,12 +28,13 @@
 
     <link href="~/vendor/datatables/dataTables.bootstrap4.min.css"
           rel="stylesheet" />
-          
+    
     <script src="~/js/panel/header/header.js"></script>
     <script src="~/js/panel/sidebar/sidebar.js"></script>
     <script src="~/js/panel/footer/footer.js"></script>
 </head>
 <body id="page-top">
+    <h1 class="text-center mt-3 mb-3">Hayvanlar</h1>
     <div id="wrapper">
         <my-sidebar></my-sidebar>
 
@@ -47,21 +49,23 @@
                         <thead>
                             <tr>
                                 <th>
-                                    Kullanıcı Id
+                                    Hayvan Id
                                 </th>
                                 <th>
-                                    Ad
+                                    Hayvan Adı
                                 </th>
                                 <th>
-                                    Soyad
+                                    Hayvan Türü
                                 </th>
                                 <th>
-                                    Email
+                                    Hayvan Yaşı
                                 </th>
                                 <th>
-                                    Şifre
+                                    Hayvan Cinsiyeti
                                 </th>
-
+                                <th>
+                                    Hayvan Açıklaması
+                                </th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -70,32 +74,33 @@
                             {
                                 <tr>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.userId)
+                                        @Html.DisplayFor(modelItem => item.AnimalId)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.userName)
+                                        @Html.DisplayFor(modelItem => item.AnimalName)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.userLastName)
+                                        @Html.DisplayFor(modelItem => item.AnimalType)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.userEmail)
+                                        @Html.DisplayFor(modelItem => item.AnimalAge)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.password)
+                                        @Html.DisplayFor(modelItem => item.AnimalGender)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AnimalDescription)
                                     </td>
 
-
                                     <td>
-                                        <a href="/Admin/EditUser/@item.userId"><button type="submit" class="btn btn-info"><span>Düzenle</span></button></a> |
-                                        
-                                        <a href="/Admin/Delete/@item.userId"><button type="submit" class="btn btn-danger"><span>Sil</span></button></a>
+                                        <a asp-action="Edit" asp-controller="User" asp-route-id="@item.AnimalId"><button class="btn btn-info">Düzenle</button></a> |
+                                        <a href="/Admin/DeleteA/@item.AnimalId"><button type="submit" class="btn btn-danger"><span>Sil</span></button></a>
                                     </td>
                                 </tr>
                             }
                         </tbody>
                     </table>
-                    <a asp-action="AddNewUser" asp-controller="Admin"><button class="btn btn-success">Yeni Kullanıcı Ekle</button></a>
+                    <a asp-action="AddAnimalForm" asp-controller="Admin"><button class="btn btn-success">Yeni Hayvan Ekle</button></a>
 
                 </div>
 

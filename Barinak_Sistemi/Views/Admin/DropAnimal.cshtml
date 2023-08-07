@@ -1,4 +1,9 @@
-﻿
+﻿@{
+    Layout = "AdminLayout";
+}
+
+@model IEnumerable<Barinak_Sistemi.Models.DropAnimal>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,48 +26,38 @@
                     <th scope="col">Hayvan Türü</th>
                     <th scope="col">Yaşı</th>
                     <th scope="col">Cinsiyet</th>
-                    <th scope="col">Bırakanın Id</th>
+                    <th scope="col">Açıklaması</th>
                     <th scope="col">İşlemler</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    
-                    <td>sss</td>
-                    <td>Köpek</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>5</td>
-                    <td class="button-column">
-                        <button class="btn btn-success">Kabul</button>
-                        <button class="btn btn-danger">Red</button>
-                    </td>
-                </tr>
-                <tr>
-                    
-                    <td>Mia</td>
-                    <td>Kedi</td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>Beklemede</td>
-                    <td class="button-column">
-                        <button class="btn btn-success">Kabul</button>
-                        <button class="btn btn-danger">Red</button>
-                    </td>
-                </tr>
-                <tr>
-                    
-                    <td>Rex</td>
-                    <td>Köpek</td>
-                    <td>4</td>
-                    <td>2</td>
-                    <td>Uygun Değil</td>
-                    <td class="button-column">
-                        <button class="btn btn-success">Kabul</button>
-                        <button class="btn btn-danger">Red</button>
-                    </td>
-                </tr>
-                <!-- Diğer hayvanlar için benzer satırlar eklenebilir -->
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DropAName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DropAType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DropAAge)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DropAGender)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DropADescription)
+                        </td>
+
+
+                        <td>
+                            <a asp-action="" asp-controller="Admin"><button class="btn btn-danger">Reddet</button></a> |
+                            <a asp-action="" asp-controller="Admin"><button class="btn btn-success">Kabul Et</button></a>
+                        </td>
+                    </tr>
+                }
+
             </tbody>
         </table>
     </div>

@@ -2,7 +2,6 @@
     Layout = "";
 }
 @model Barinak_Sistemi.Models.User
-
   
 
 <!DOCTYPE html>
@@ -28,14 +27,14 @@
 
         <main role="main" class="pb-3">
             <div class="content">
-				<form asp-controller="Login"  class="form" asp-action="Index">
+				<form class="form"  asp-action="Index" method="post">
 					<div class=" loginContainer ">
 						<!-- kullanıcı giriş kısmı -->
 						<h1 class="text-center">Giriş Yap</h1><br />
 						<div>
 							<div class="mb-3">
 								<label asp-for="userEmail" class="form-label">E-Posta</label>
-								<input asp-for="userEmail" name="email" type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">
+								<input asp-for="userEmail" name="userEmail" type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">
 								<span asp-validation-for="userEmail"></span>
 							</div>
 							<div class="mb-3">
@@ -49,34 +48,45 @@
 
 
 							</div>
+							
+							
 						</div>
+						<!--kullanıcı yanlış bilgi girerse alert çıkar -->
+						@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+						{
+							<div class="alert alert-danger mt-2 " role="alert">
+								@ViewBag.ErrorMessage
+							</div>
+
+						}
 
 					</div>
 				</form>
+				
 
-				<form asp-controller="Login" class="form" asp-action="Index">
+				<form asp-controller="Login" class="form" asp-action="Register" method="post">
 					<div class="registerContainer">
 						<!-- kullanıcı kayıt olma kısmı -->
 						<h1 class="text-center">Kayıt Ol</h1><br />
 						<div>
 							<div class="mb-3">
 								<label asp-for="userName" class="form-label">Adı</label>
-								<input asp-for="userName" name="name" type="text" class="form-control"  >
+								<input asp-for="userName" name="userName" type="text" class="form-control" id="InputName">
 								<span asp-validation-for="userName"></span>
 							</div>
 							<div class="mb-3">
 								<label asp-for="userLastName" class="form-label">Soyadı</label>
-								<input asp-for="userLastName" name="lastName" type="lastName" class="form-control" id="InputEmail2" aria-describedby="emailHelp">
+								<input asp-for="userLastName" name="userLastName" type="lastName" class="form-control" id="InputLastName">
 								<span asp-validation-for="userLastName"></span>
 							</div>
 							<div class="mb-3">
 								<label asp-for="userEmail" class="form-label">E-Posta</label>
-								<input asp-for="userEmail" name="email" type="email" class="form-control" id="InputEmail2" aria-describedby="emailHelp">
+								<input asp-for="userEmail" name="userEmail" type="email" class="form-control" id="InputEmail2" aria-describedby="emailHelp">
 								<span asp-validation-for="userEmail"></span>
 							</div>
 							<div class="mb-3">
 								<label asp-for="userPhoneNumber" class="form-label">Telefon Numarası</label>
-								<input asp-for="userPhoneNumber" name="phoneNumber" type="number" class="form-control" id="InputPhoneNumber">
+								<input asp-for="userPhoneNumber" name="userPhoneNumber" type="number" class="form-control" id="InputPhoneNumber" >
 								<span asp-validation-for="userPhoneNumber"></span>
 							</div>
 							<div class="mb-3">
@@ -91,7 +101,17 @@
 								<button type="submit" class="btn btn-dark">Sign Up</button>
 							</div>
 						</div>
+						<!--kullanıcı kayıt olursa alert çıkar -->
+						@if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+						{
+							<div class="alert alert-success mt-2 " role="alert">
+								@ViewBag.SuccessMessage
+							</div>
+
+						}
+
 					</div>
+					
 				</form>
             </div>
             

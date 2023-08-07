@@ -1,0 +1,72 @@
+﻿@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            min-height: 100vh;
+            position: relative;
+            margin: 0;
+            padding-bottom: 60px; /* Footer yüksekliği kadar alt boşluk bırak */
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px; /* Footer yüksekliği */
+            line-height: 60px; /* Footer içeriğinin yükseklikle ortalanması */
+            background-color: #343a40; /* Footer arka plan rengi */
+            color: #ffffff; /* Footer metin rengi */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" asp-action="AnimalList" asp-controller="Admin">Admin Paneli</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" asp-action="AnimalList" asp-controller="Admin">Hayvanlar <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="DropAnimal" asp-controller="Admin">Hayvan Kabul</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="AnimalShelter" asp-controller="Admin">Hayvan Sahiplenme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="Users" asp-controller="Admin">Kullanıcılar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="AddAnimalForm" asp-controller="Admin">Hayvan Ekle</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="footer text-center">
+        &copy; 2023 Admin Paneli. Tüm hakları saklıdır.
+    </footer>
+
+    <!-- Bootstrap JS (optional, for dropdowns, etc.) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
