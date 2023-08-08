@@ -1,6 +1,9 @@
 ﻿@{
     Layout = "AdminLayout";
 }
+
+@model IEnumerable<Barinak_Sistemi.Models.ShelterUsers>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,49 +21,47 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Hayvan Id</th>
-                    <th scope="col">Hayvan Adı</th>
-                    <th scope="col">Hayvan Türü</th>
-                    <th scope="col">Yaşı</th>
-                    <th scope="col">Sahiplenenin Id</th>
+                    <th scope="col">Kişi Adı</th>
+                    <th scope="col">Soyadı</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Numara</th>
+                    <th scope="col">Cinsiyet</th>
+                    <th scope="col">Sebep</th>
                     <th scope="col">İşlemler</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>sss</td>
-                    <td>Köpek</td>
-                    <td>2</td>
-                    <td>5</td>
-                    <td class="button-column">
-                        <button class="btn btn-success">Kabul</button>
-                        <button class="btn btn-danger">Red</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Mia</td>
-                    <td>Kedi</td>
-                    <td>1</td>
-                    <td>Beklemede</td>
-                    <td class="button-column">
-                        <button class="btn btn-success">Kabul</button>
-                        <button class="btn btn-danger">Red</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Rex</td>
-                    <td>Köpek</td>
-                    <td>4</td>
-                    <td>Uygun Değil</td>
-                    <td class="button-column">
-                        <button class="btn btn-success">Kabul</button>
-                        <button class="btn btn-danger">Red</button>
-                    </td>
-                </tr>
-                <!-- Diğer hayvanlar için benzer satırlar eklenebilir -->
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.shelterName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.shelterSurName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.shelterGender)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.shelterPhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.reason)
+                        </td>
+
+
+                        <td>
+                            <a href=""><button type="submit" class="btn btn-success"><span>Kabul</span></button></a> |
+
+                            <a href=""><button type="submit" class="btn btn-danger"><span>reddet</span></button></a>
+                        </td>
+                    </tr>
+                }
+                
             </tbody>
         </table>
     </div>

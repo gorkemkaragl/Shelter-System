@@ -93,7 +93,7 @@
                                     </td>
 
                                     <td>
-                                        <a asp-action="Edit" asp-controller="User" asp-route-id="@item.AnimalId"><button class="btn btn-info">Düzenle</button></a> |
+                                        <a href="/Admin/EditAnimal/@item.AnimalId"><button type="submit" class="btn btn-info"><span>Düzenle</span></button></a> |
                                         <a href="/Admin/DeleteA/@item.AnimalId"><button type="submit" class="btn btn-danger"><span>Sil</span></button></a>
                                     </td>
                                 </tr>

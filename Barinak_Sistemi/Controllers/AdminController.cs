@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿
+
 using Barinak_Sistemi.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Data.Entity;
-using System.Drawing;
 
 namespace Barinak_Sistemi.Controllers
 {
@@ -30,7 +25,10 @@ namespace Barinak_Sistemi.Controllers
         }
         public IActionResult AnimalShelter()
 		{
-			return View();
+            ViewData["ShelterUsers"] = _dbContext.SUser.ToList();
+            List<ShelterUsers> shelterUsers = _dbContext.SUser.ToList();
+            return View(shelterUsers);
+
 		}
 
         // Hayvan Kabulde bekleyen hayvanları listeleme
@@ -164,6 +162,37 @@ namespace Barinak_Sistemi.Controllers
                 return RedirectToAction("Users", "Admin");
             }
             return View(users);
+        }
+
+        //Hayvan Edit işlemleri
+        public async Task<IActionResult> EditAnimal(int? id)
+        {
+            if (id == null || _dbContext.Animals == null)
+            {
+                return NotFound();
+            }
+
+            var animal = await _dbContext.Animals.FindAsync(id);
+            if (animal == null)
+            {
+                return NotFound();
+            }
+            return View(animal);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditAnimal(Animal animal)
+        {
+            if (ModelState.IsValid)
+            {
+
+                _dbContext.Update(animal);
+                await _dbContext.SaveChangesAsync();
+
+                return RedirectToAction("AnimalList", "Admin");
+            }
+            return View(animal);
         }
 
     }

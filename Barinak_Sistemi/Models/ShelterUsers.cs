@@ -14,11 +14,7 @@ namespace Barinak_Sistemi.Models
 		[Required(ErrorMessage = "boş bırakılamaz")]
 		public string shelterPhoneNumber { get; set; }
 		[Required(ErrorMessage = "boş bırakılamaz")]
-		public string address { get; set; }
-		[Required(ErrorMessage = "boş bırakılamaz")]
-		public string city { get; set; }
-		[Required(ErrorMessage = "boş bırakılamaz")]
-		public int salary { get; set; }
+
 		public string shelterGender { get; set; }
 		
 		public string reason { get; set; }
